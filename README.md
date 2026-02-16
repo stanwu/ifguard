@@ -22,6 +22,16 @@ This tool can be used to detect abnormal high-traffic IP connections and feed do
 - API/service protection by driving dynamic WAF or gateway rules from real-time IP counters.
 - Incident response support by quickly identifying top talkers during attack windows.
 
+## Why Read Packets Before iptables
+
+- Earlier visibility for bursty traffic and attack patterns before firewall decision points.
+- Observation is not hidden by existing DROP rules, which improves investigation quality.
+- Enables pre-firewall risk scoring and automation decisions for downstream controls.
+- Reduces firewall rule bloat by sending only high-confidence block candidates.
+- Improves observability with raw per-IP traffic metrics for SIEM, reports, and audits.
+- Supports multi-layer defense orchestration (iptables, WAF, and hardware firewalls).
+- Practical boundary: this layer is for detection/telemetry; high-performance packet dropping is better handled by XDP/eBPF.
+
 ## Requirements
 
 - Linux
