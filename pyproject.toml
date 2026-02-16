@@ -7,7 +7,7 @@ requires-python = ">=3.9"
 authors = [
   { name = "ifguard" }
 ]
-license = { text = "MIT" }
+license = "MIT"
 dependencies = []
 
 [project.scripts]

@@ -81,3 +81,7 @@ make run IFACE=eth0
 ## CI
 
 - GitHub Actions workflow at `.github/workflows/ci.yml` runs `make test` on every push and pull request.
+
+## License
+
+- MIT (see `LICENSE`)
