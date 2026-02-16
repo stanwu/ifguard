@@ -1,0 +1,21 @@
+[project]
+name = "ifguard-iptop-json"
+version = "0.1.0"
+description = "Lightweight IP traffic counter (iftop-like) with JSON output"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "ifguard" }
+]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+ifguard-iptop = "iptop_json.cli:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["iptop_json"]
