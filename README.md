@@ -2,12 +2,25 @@
 
 Minimal `iftop`-like CLI that reads raw TCP packets on Linux and prints per-IP counters as JSON Lines.
 
+This tool can be used to detect abnormal high-traffic IP connections and feed downstream hardware-firewall automation for IP blocking.
+
 ## Features
 
 - Reads packets with `AF_PACKET` raw socket (requires root / `CAP_NET_RAW`)
 - Tracks per-peer IP counters (`in_bytes`, `out_bytes`, `in_pkts`, `out_pkts`)
 - Emits JSON every N seconds
 - Supports window mode (reset each interval) and cumulative mode
+
+## Use Cases
+
+- Detect abnormal high-traffic IP connections and trigger hardware-firewall auto-block workflows.
+- Early DDoS detection by identifying sudden traffic spikes from source IPs.
+- Egress hotspot analysis to tune QoS/rate-limiting and protect shared bandwidth.
+- Host anomaly monitoring (unexpected outbound bursts, potential data exfiltration, scanning behavior).
+- SIEM/SOC data feed by forwarding JSON lines to ELK/Splunk/Graylog pipelines.
+- Baseline and drift detection for hybrid cloud/on-prem traffic behavior.
+- API/service protection by driving dynamic WAF or gateway rules from real-time IP counters.
+- Incident response support by quickly identifying top talkers during attack windows.
 
 ## Requirements
 
